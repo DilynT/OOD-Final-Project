@@ -5944,11 +5944,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DSU\\Documents\\Classes\\Current Classes\\CSC 260\\cs Bot Project Folder\\DiscordBotv1\\FinalProjectBot\\FinalProjectBot\\FinalProjectBot.csproj",
+      "projectUniqueName": "C:\\Users\\DSU\\Documents\\Projects\\OOD Final Project\\Source\\FinalProjectBot\\FinalProjectBot.csproj",
       "projectName": "FinalProjectBot",
-      "projectPath": "C:\\Users\\DSU\\Documents\\Classes\\Current Classes\\CSC 260\\cs Bot Project Folder\\DiscordBotv1\\FinalProjectBot\\FinalProjectBot\\FinalProjectBot.csproj",
+      "projectPath": "C:\\Users\\DSU\\Documents\\Projects\\OOD Final Project\\Source\\FinalProjectBot\\FinalProjectBot.csproj",
       "packagesPath": "C:\\Users\\DSU\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DSU\\Documents\\Classes\\Current Classes\\CSC 260\\cs Bot Project Folder\\DiscordBotv1\\FinalProjectBot\\FinalProjectBot\\obj\\",
+      "outputPath": "C:\\Users\\DSU\\Documents\\Projects\\OOD Final Project\\Source\\FinalProjectBot\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

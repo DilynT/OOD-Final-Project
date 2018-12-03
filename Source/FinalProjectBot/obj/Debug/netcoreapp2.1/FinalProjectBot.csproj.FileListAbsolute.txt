@@ -9,3 +9,14 @@ C:\Users\DSU\Documents\Classes\Current Classes\CSC 260\cs Bot Project Folder\Dis
 C:\Users\DSU\Documents\Classes\Current Classes\CSC 260\cs Bot Project Folder\DiscordBotv1\FinalProjectBot\FinalProjectBot\bin\Debug\netcoreapp2.1\FinalProjectBot.pdb
 C:\Users\DSU\Documents\Classes\Current Classes\CSC 260\cs Bot Project Folder\DiscordBotv1\FinalProjectBot\FinalProjectBot\obj\Debug\netcoreapp2.1\FinalProjectBot.dll
 C:\Users\DSU\Documents\Classes\Current Classes\CSC 260\cs Bot Project Folder\DiscordBotv1\FinalProjectBot\FinalProjectBot\obj\Debug\netcoreapp2.1\FinalProjectBot.pdb
+C:\Users\DSU\Documents\Projects\OOD Final Project\Source\FinalProjectBot\bin\Debug\netcoreapp2.1\FinalProjectBot.deps.json
+C:\Users\DSU\Documents\Projects\OOD Final Project\Source\FinalProjectBot\bin\Debug\netcoreapp2.1\FinalProjectBot.runtimeconfig.json
+C:\Users\DSU\Documents\Projects\OOD Final Project\Source\FinalProjectBot\bin\Debug\netcoreapp2.1\FinalProjectBot.runtimeconfig.dev.json
+C:\Users\DSU\Documents\Projects\OOD Final Project\Source\FinalProjectBot\bin\Debug\netcoreapp2.1\FinalProjectBot.dll
+C:\Users\DSU\Documents\Projects\OOD Final Project\Source\FinalProjectBot\bin\Debug\netcoreapp2.1\FinalProjectBot.pdb
+C:\Users\DSU\Documents\Projects\OOD Final Project\Source\FinalProjectBot\obj\Debug\netcoreapp2.1\FinalProjectBot.csprojAssemblyReference.cache
+C:\Users\DSU\Documents\Projects\OOD Final Project\Source\FinalProjectBot\obj\Debug\netcoreapp2.1\FinalProjectBot.csproj.CoreCompileInputs.cache
+C:\Users\DSU\Documents\Projects\OOD Final Project\Source\FinalProjectBot\obj\Debug\netcoreapp2.1\FinalProjectBot.AssemblyInfoInputs.cache
+C:\Users\DSU\Documents\Projects\OOD Final Project\Source\FinalProjectBot\obj\Debug\netcoreapp2.1\FinalProjectBot.AssemblyInfo.cs
+C:\Users\DSU\Documents\Projects\OOD Final Project\Source\FinalProjectBot\obj\Debug\netcoreapp2.1\FinalProjectBot.dll
+C:\Users\DSU\Documents\Projects\OOD Final Project\Source\FinalProjectBot\obj\Debug\netcoreapp2.1\FinalProjectBot.pdb
