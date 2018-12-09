@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.WebSocket;
 using Discord.Commands;
+using Discord.Audio;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FinalProjectBot
@@ -21,7 +22,6 @@ namespace FinalProjectBot
         {
             _client = new DiscordSocketClient();
             _commands = new CommandService();
-
             _services = new ServiceCollection()
                 .AddSingleton(_client)
                 .AddSingleton(_commands)
@@ -46,7 +46,7 @@ namespace FinalProjectBot
         {
             var guild = user.Guild;
             var channel = guild.DefaultChannel;
-            await channel.SendMessageAsync($"Welcome, {user.Mention}");
+            await channel.SendMessageAsync($"New Member, {user.Mention}, has joined the chat. May god have mercy.");
         }
 
         private Task Log(LogMessage arg)
