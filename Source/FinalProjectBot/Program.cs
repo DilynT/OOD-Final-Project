@@ -5,6 +5,7 @@ using Discord;
 using Discord.WebSocket;
 using Discord.Commands;
 using Discord.Audio;
+using FinalProjectBot.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FinalProjectBot
@@ -25,6 +26,9 @@ namespace FinalProjectBot
             _services = new ServiceCollection()
                 .AddSingleton(_client)
                 .AddSingleton(_commands)
+                .AddSingleton<AudioService>()
+                .AddSingleton<ChatService>()
+                .AddSingleton<CustomService>()
                 .BuildServiceProvider();
 
             string botPrefix = Config.Token;
@@ -74,7 +78,7 @@ namespace FinalProjectBot
 
             int argPos = 0;
 
-            if (message.HasStringPrefix("260bot ", ref argPos) ||
+            if (message.HasStringPrefix("!", ref argPos) ||
                 message.HasMentionPrefix(_client.CurrentUser, ref argPos))
             {
                 var context = new SocketCommandContext(_client, message);

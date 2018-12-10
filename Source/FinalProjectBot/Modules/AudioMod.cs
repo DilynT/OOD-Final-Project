@@ -9,6 +9,7 @@ using Discord.Audio;
 
 public class AudioModule : ModuleBase<ICommandContext>
 {
+/*
 
     // Scroll down further for the AudioService.
     // Like, way down
@@ -23,7 +24,7 @@ public class AudioModule : ModuleBase<ICommandContext>
 
     // You *MUST* mark these commands with 'RunMode.Async'
     // otherwise the bot will not respond until the Task times out.
-    [Command("join", RunMode = RunMode.Async)]
+    [Command("join2", RunMode = RunMode.Async)]
     public async Task JoinCmd()
     {
         await _service.JoinAudio(Context.Guild, (Context.User as IVoiceState).VoiceChannel);
@@ -32,15 +33,15 @@ public class AudioModule : ModuleBase<ICommandContext>
     // Remember to add preconditions to your commands,
     // this is merely the minimal amount necessary.
     // Adding more commands of your own is also encouraged.
-    [Command("leave", RunMode = RunMode.Async)]
+    [Command("leave2", RunMode = RunMode.Async)]
     public async Task LeaveCmd()
     {
         await _service.LeaveAudio(Context.Guild);
     }
 
-    [Command("play", RunMode = RunMode.Async)]
+    [Command("play2", RunMode = RunMode.Async)]
     public async Task PlayCmd([Remainder] string song)
     {
         await _service.SendAudioAsync(Context.Guild, Context.Channel, song);
-    }
+    }*/
 }
