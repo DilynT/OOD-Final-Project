@@ -13,40 +13,36 @@ namespace FinalProjectBot.Modules
     [Summary("Audio module to interact with voice chat. Currently, used to playback audio in a stream.")]
     public class AudioModule : CustomModule
     {
-        // Private variables
         private readonly AudioService m_Service;
 
-        // Dependencies are automatically injected via this constructor.
-        // Remember to add an instance of the AudioService
-        // to your IServiceCollection when you initialize your bot!
+        //Dependencies are automatically injected via this constructor
+        //Add an instance of the AudioService
         public AudioModule(AudioService service)
         {
             m_Service = service;
             m_Service.SetParentModule(this); // Reference to this from the service.
         }
 
-        // You *MUST* mark these commands with 'RunMode.Async'
-        // otherwise the bot will not respond until the Task times out.
-        //
-        // Remember to add preconditions to your commands,
-        // this is merely the minimal amount necessary.
-        //
+
+        //A lot of these sections are very short, because as I was working I found this advice for working with discord bots
         // 'Avoid using long-running code in your modules wherever possible. 
         // You should not be implementing very much logic into your modules,
         // instead, outsource to a service for that.'
 
+        //Gets bot to join the chat
         [Command("join", RunMode = RunMode.Async)]
         [Remarks("!join")]
         [Summary("Joins the user's voice channel.")]
         public async Task JoinVoiceChannel()
         {
-            if (m_Service.GetDelayAction()) return; // Stop multiple attempts to join too quickly.
+            if (m_Service.GetDelayAction()) return; //Stop multiple attempts to join too quickly.
             await m_Service.JoinAudioAsync(Context.Guild, (Context.User as IVoiceState).VoiceChannel);
 
-            // Start the autoplay service if enabled, but not yet started.
+            //Start the autoplay service if enabled
             await m_Service.CheckAutoPlayAsync(Context.Guild, Context.Channel);
         }
 
+        //gets bot to leave the chat
         [Command("leave", RunMode = RunMode.Async)]
         [Remarks("!leave")]
         [Summary("Leaves the current voice channel.")]
@@ -55,20 +51,19 @@ namespace FinalProjectBot.Modules
             await m_Service.LeaveAudioAsync(Context.Guild);
         }
 
+        //tells bot to play given Link
         [Command("play", RunMode = RunMode.Async)]
         [Remarks("!play [url/index]")]
         [Summary("Plays a song by url or local path.")]
         public async Task PlayVoiceChannel([Remainder] string song)
         {
-            // Play the audio. We check if audio is null when we attempt to play. This function is BLOCKING.
             await m_Service.ForcePlayAudioAsync(Context.Guild, Context.Channel, song);
 
-            // Start the autoplay service if enabled, but not yet started.
-            // Once force play is done, if auto play is enabled, we can resume the autoplay here.
-            // We also write a counter to make sure this is the last play called, to avoid cascading auto plays.
+            //A counter to make sure this is the last play called, to avoid cascading auto plays
             if (m_Service.GetNumPlaysCalled() == 0) await m_Service.CheckAutoPlayAsync(Context.Guild, Context.Channel);
         }
 
+        //play a song locally, Really buggy.
         [Command("play", RunMode = RunMode.Async)]
         public async Task PlayVoiceChannelByIndex(int index)
         {
@@ -76,13 +71,14 @@ namespace FinalProjectBot.Modules
             await PlayVoiceChannel(m_Service.GetLocalSong(index));
         }
 
+        //Most of the commands from here down are self explanitory
         [Command("pause", RunMode = RunMode.Async)]
         [Remarks("!pause")]
         [Summary("Pauses the current song, if playing.")]
         public async Task PauseVoiceChannel()
         {
             m_Service.PauseAudio();
-            await Task.Delay(0); // Suppress async warrnings.
+            await Task.Delay(0); // Suppress async warnings
         }
 
         [Command("resume", RunMode = RunMode.Async)]
@@ -91,7 +87,7 @@ namespace FinalProjectBot.Modules
         public async Task ResumeVoiceChannel()
         {
             m_Service.ResumeAudio();
-            await Task.Delay(0); // Suppress async warrnings.
+            await Task.Delay(0); // Suppress async warnings.
         }
 
         [Command("stop", RunMode = RunMode.Async)]
@@ -100,7 +96,7 @@ namespace FinalProjectBot.Modules
         public async Task StopVoiceChannel()
         {
             m_Service.StopAudio();
-            await Task.Delay(0); // Suppress async warrnings.
+            await Task.Delay(0); // Suppress async warnings.
         }
 
         [Command("volume")]
@@ -169,6 +165,7 @@ namespace FinalProjectBot.Modules
             await m_Service.DownloadSongAsync(path);
         }
 
+        //List Songs in Queue.
         [Command("songs", RunMode = RunMode.Async)]
         [Remarks("!songs [page]")]
         [Summary("Shows songs in our local folder in pages.")]
@@ -178,6 +175,7 @@ namespace FinalProjectBot.Modules
             await Task.Delay(0);
         }
 
+        //Remove Duplicate entries.
         [Command("cleanupsongs", RunMode = RunMode.Async)]
         [Remarks("!cleanupsongs")]
         [Summary("Cleans the local folder of duplicate files created by our downloader.")]

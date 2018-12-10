@@ -15,6 +15,7 @@ namespace FinalProjectBot
 {
     class Program
     {
+        //Reroutes the functionality of Main to RunBotAsync()
         static void Main(string[] args) => new Program().RunBotAsync().GetAwaiter().GetResult();
 
 
@@ -22,6 +23,7 @@ namespace FinalProjectBot
         private CommandService _commands;
         private IServiceProvider _services;
 
+        //Main Body Of Program, Establishes Initial Connection
         public async Task RunBotAsync()
         {
             _client = new DiscordSocketClient();
@@ -49,13 +51,15 @@ namespace FinalProjectBot
             await Task.Delay(-1);
         }
 
+        //Quick message for when a new user joins the chat
         private async Task AnnounceUserJoined(SocketGuildUser user)
         {
             var guild = user.Guild;
             var channel = guild.DefaultChannel;
             await channel.SendMessageAsync($"New Member, {user.Mention}, has joined the chat. May god have mercy.");
         }
-
+        
+        //Basic Event logging to report errors in commands
         private Task Log(LogMessage arg)
         {
             Console.WriteLine(arg);
@@ -63,6 +67,7 @@ namespace FinalProjectBot
             return Task.CompletedTask;
         }
 
+        //Registers command input
         public async Task RegisterCommandsAsync()
         {
             _client.MessageReceived += HandleCommandAsync;
@@ -70,6 +75,7 @@ namespace FinalProjectBot
 
         }
 
+        //Establishes that a command of some kind was given and sorts out the prefix
         public async Task HandleCommandAsync(SocketMessage arg)
         {
             var message = arg as SocketUserMessage;

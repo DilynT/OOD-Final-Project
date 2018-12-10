@@ -7,6 +7,7 @@ using FinalProjectBot.Modules;
 namespace FinalProjectBot.Services
 {
     // Enum to direct the string to output. Reference Log()
+    //Most Not used at the moment, but here for future uses.
     public enum E_LogOutput { Console, Reply, Playing };
 
     /**
@@ -16,7 +17,7 @@ namespace FinalProjectBot.Services
      */
     public class CustomService
     {
-        // We have a reference to the parent module to perform actions like replying and setting the current game properly.
+        //We have a reference to the parent module to perform actions like replying and setting the current game properly
         private CustomModule m_ParentModule = null;
 
         // This should always be called in the module constructor to 

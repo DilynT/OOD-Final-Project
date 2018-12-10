@@ -8,6 +8,7 @@ namespace FinalProjectBot.Modules
 {
     public class Tester : ModuleBase<SocketCommandContext>
     {
+        //First command tested on the bot, to nostalgic to remove
         [Command("tester")]
         public async Task TestAsync()
         {

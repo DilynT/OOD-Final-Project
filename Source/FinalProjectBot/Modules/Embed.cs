@@ -9,6 +9,7 @@ namespace FinalProjectBot.Modules
 {
     public class Embed : ModuleBase<SocketCommandContext>
     {
+        //Short Test of Embed feature in the discord libraries
         [Command("embed")]
         public async Task EmbedAsync()
         {

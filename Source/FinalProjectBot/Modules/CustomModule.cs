@@ -10,7 +10,7 @@ namespace FinalProjectBot.Modules
 {
     public class CustomModule : ModuleBase
     {
-        // Reply will allow the AudioService to reply in the correct text channel.
+        //Will allow the AudioService to reply in the correct text channel.
         public async Task ServiceReplyAsync(string s)
         {
             await ReplyAsync(s);
@@ -21,7 +21,7 @@ namespace FinalProjectBot.Modules
             await ReplyAsync(title, false, emb);
         }
 
-        // Playing will allow the AudioService to set the current game.
+        //Will allow the AudioService to set the current game.
         public async Task ServicePlayingAsync(string s)
         {
             try

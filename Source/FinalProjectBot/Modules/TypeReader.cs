@@ -8,10 +8,11 @@ namespace FinalProjectBot.Modules
 {
     public class TypeReader : ModuleBase<SocketCommandContext>
     {
+        //Simple Command that takes input from command and attaches it to a prebuilt message
         [Command("typeread")]
         public async Task typereadAsync(string name = "Bob")
         {
-            await ReplyAsync($"{name} is noobie");
+            await ReplyAsync($"{name} is attempting to leave a message");
         }
     }
 }

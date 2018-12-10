@@ -12,7 +12,7 @@ namespace FinalProjectBot.Modules
 {
     public class HelpAndVersions : ModuleBase<SocketCommandContext>
     {
-
+        //using the Ember Builder Feature we can provide a user friendly help menu sent to the direct message
         [Command("help"), Alias("h"),
         Remarks("Sends a direct message to the user who called the command.")]
         public async Task Help()

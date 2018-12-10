@@ -204,7 +204,6 @@ namespace FinalProjectBot.Helpers
         }
 
         // Verifies that the path is a network path and not a local path. Checks here before extracting.
-        // TODO: Add more arguments here, but we'll just check based on http and assume a network link.
         public bool? VerifyNetworkPath(string path)
         {
             if (path == null) return null;
@@ -213,7 +212,6 @@ namespace FinalProjectBot.Helpers
 
         // Extracts data from the current path, by finding it locally or on the network.
         // Puts all the information into an AudioFile and returns it.
-        // 
         // Filename - source by local filename or from network link.
         // Title - name of the song.
         // IsNetwork - If it's local or network.

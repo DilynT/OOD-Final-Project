@@ -12,17 +12,15 @@ namespace FinalProjectBot.Modules
     [Summary("Chat module to interact with text chat.")]
     public class ChatModule : CustomModule
     {
-        // Private variables
         private readonly ChatService m_Service;
 
-        // Remember to add an instance of the AudioService
-        // to your IServiceCollection when you initialize your bot!
         public ChatModule(ChatService service)
         {
             m_Service = service;
-            //m_Service.SetParentModule(this); // Reference to this from the service.
+            m_Service.SetParentModule(this); // Reference to this from the service.
         }
 
+        //Change bot status
         [Command("botGameMessage")]
         [Alias("botGameMessage")]
         
@@ -34,6 +32,7 @@ namespace FinalProjectBot.Modules
             await Task.Delay(0);
         }
 
+        //Repeat content given in Command
         [Command("input")]
         [Alias("giveinput")]
         
@@ -43,7 +42,7 @@ namespace FinalProjectBot.Modules
             m_Service.SayMessage(userMsg);
             await Task.Delay(0);
         }
-
+        //Clear previous messages in the chat
         [Command("Clear")]
         [Remarks("!clear [num]")]
         [Summary("Allows admins to clear [num] amount of messages from current channel")]

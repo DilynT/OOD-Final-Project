@@ -7,6 +7,7 @@ namespace FinalProjectBot.Helpers
 {
     public class AudioFile
     {
+        //Collect Data needed for audio to play
         private string m_FileName;
         private string m_Title;
         private bool m_IsNetwork;
@@ -16,7 +17,7 @@ namespace FinalProjectBot.Helpers
         {
             m_FileName = "";
             m_Title = "";
-            m_IsNetwork = true; // True by default, streamed from the network
+            m_IsNetwork = true; // True by default
             m_IsDownloaded = false;
         }
 

@@ -6,7 +6,8 @@ using Discord;
 using Discord.Commands;
 using Discord.Audio;
 
-
+//This was an early instance of my attempts to implemenet Audio.
+//I keep this in here as a point of reference and for possible future re-use
 public class AudioModule : ModuleBase<ICommandContext>
 {
 /*
