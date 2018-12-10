@@ -23,9 +23,9 @@ namespace FinalProjectBot.Modules
             //m_Service.SetParentModule(this); // Reference to this from the service.
         }
 
-        [Command("botStatus")]
-        [Alias("botstatus")]
-        [Remarks("!botstatus [status]")]
+        [Command("botGameMessage")]
+        [Alias("botGameMessage")]
+        
         [Summary("Allows admins to set the bot's current game to [status]")]
         [RequireUserPermission(GuildPermission.ManageRoles)]
         public async Task SetBotStatus([Remainder] string botStatus)
@@ -34,9 +34,9 @@ namespace FinalProjectBot.Modules
             await Task.Delay(0);
         }
 
-        [Command("say")]
-        [Alias("say")]
-        [Remarks("!say [msg]")]
+        [Command("input")]
+        [Alias("giveinput")]
+        
         [Summary("The bot will respond in the same channel with the message said.")]
         public async Task Say([Remainder] string userMsg = "No Text Provided")
         {

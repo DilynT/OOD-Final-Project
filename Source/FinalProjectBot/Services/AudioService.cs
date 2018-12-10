@@ -248,7 +248,7 @@ namespace FinalProjectBot.Services
         public void PauseAudio() { m_AudioPlayer.Pause(); }
         public void ResumeAudio() { m_AudioPlayer.Resume(); }
         public void StopAudio() { m_AutoPlay = false; m_AutoPlayRunning = false; m_AudioPlayer.Stop(); }
-        public void AdjustVolume(float volume) { m_AudioPlayer.AdjustVolume(volume); } // Takes in a value from [0.0f - 1.0f].
+        public void AdjustVolume(float volume = 100) { m_AudioPlayer.AdjustVolume(volume); } // Takes in a value from [0.0f - 1.0f].
 
         // Sets the autoplay service to be true. Likely, wherever this is set, we also check and start auto play.
         public void SetAutoPlay(bool enable) { m_AutoPlay = enable; }

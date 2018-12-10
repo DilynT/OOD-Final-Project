@@ -1,4 +1,5 @@
-﻿using System;
+﻿#define DEBUG_VERBOSE
+using System;
 using System.Reflection;
 using System.Threading.Tasks;
 using Discord;
@@ -6,6 +7,8 @@ using Discord.WebSocket;
 using Discord.Commands;
 using Discord.Audio;
 using FinalProjectBot.Services;
+using FinalProjectBot.Modules;
+using FinalProjectBot.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FinalProjectBot
